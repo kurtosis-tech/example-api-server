@@ -1,0 +1,47 @@
+syntax = "proto3";
+package example_api_server_api;
+// NOTE: It sucks that we have this Go-specific logic inside this file (which should be language-agnostic). However, the Protobuf team have
+// taken a hard stance on this being the way it should be done, so we have to do it this way.
+option go_package = "github.com/kurtosis-tech/example-api-server/api/golang/example_api_server_rpc_api_bindings";
+
+import "google/protobuf/empty.proto";
+
+service ExampleAPIServerService {
+  //Used to check service availability
+  rpc IsAvailable (google.protobuf.Empty) returns (google.protobuf.Empty) {};
+  //Add a person ID into the book reads store
+  rpc AddPerson(AddPersonArgs) returns (google.protobuf.Empty) {};
+  //Get a person books read value by person ID
+  rpc GetPerson(GetPersonArgs) returns (GetPersonResponse) {};
+  //Increment in 1 the amount of person books read by person ID
+  rpc IncrementBooksRead(IncrementBooksReadArgs) returns (google.protobuf.Empty) {};
+}
+
+// ==============================================================================================
+//                                         AddPerson
+// ==============================================================================================
+message AddPersonArgs {
+  //The person ID
+  string person_id = 1;
+}
+
+// ==============================================================================================
+//                                         GetPerson
+// ==============================================================================================
+message GetPersonArgs {
+  //The person ID
+  string person_id = 1;
+}
+
+message GetPersonResponse {
+  //The amount of book read by the person
+  string books_read = 1;
+}
+
+// ==============================================================================================
+//                                      IncrementBooksRead
+// ==============================================================================================
+message IncrementBooksReadArgs{
+  //The person ID
+  string person_id = 1;
+}
