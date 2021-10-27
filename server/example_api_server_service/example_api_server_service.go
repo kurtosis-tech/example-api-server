@@ -34,7 +34,7 @@ func (exampleAPIServerService ExampleAPIServerService) AddPerson(ctx context.Con
 	personId := args.GetPersonId()
 
 	// Make sure the person doesn't already exist
-	exists, err := exampleAPIServerService.existsPersonInDatastore(ctx, personId)
+	exists, err := exampleAPIServerService.doesPersonExistInDatastore(ctx, personId)
 	if err != nil {
 		return nil, stacktrace.Propagate(err, "An error occurred checking if person with ID '%v' exists", personId)
 	}
@@ -59,7 +59,7 @@ func (exampleAPIServerService ExampleAPIServerService) GetPerson(ctx context.Con
 	personId := args.GetPersonId()
 
 	// If the person doesn't already exist, return an error
-	exists, err := exampleAPIServerService.existsPersonInDatastore(ctx, personId)
+	exists, err := exampleAPIServerService.doesPersonExistInDatastore(ctx, personId)
 	if err != nil {
 		return nil, stacktrace.Propagate(err, "An error occurred checking if person with ID '%v' exists", personId)
 	}
@@ -86,7 +86,7 @@ func (exampleAPIServerService ExampleAPIServerService) IncrementBooksRead(ctx co
 	personId := args.GetPersonId()
 
 	// Make sure the person exists
-	exists, err := exampleAPIServerService.existsPersonInDatastore(ctx, personId)
+	exists, err := exampleAPIServerService.doesPersonExistInDatastore(ctx, personId)
 	if err != nil {
 		return nil, stacktrace.Propagate(err, "An error occurred checking if person with ID '%v' exists", personId)
 	}
@@ -126,7 +126,7 @@ func (exampleAPIServerService ExampleAPIServerService) IncrementBooksRead(ctx co
 // ====================================================================================================
 // 									   Private helper methods
 // ====================================================================================================
-func (exampleAPIServerService ExampleAPIServerService) existsPersonInDatastore(ctx context.Context, personId string) (bool, error) {
+func (exampleAPIServerService ExampleAPIServerService) doesPersonExistInDatastore(ctx context.Context, personId string) (bool, error) {
 	existsArgs := &datastore_rpc_api_bindings.ExistsArgs{
 		Key: personId,
 	}

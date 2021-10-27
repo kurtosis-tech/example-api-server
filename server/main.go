@@ -39,16 +39,6 @@ type serverConfig struct {
 	DatastorePort int	`json:"datastorePort"`
 }
 
-func (config serverConfig) validate() error {
-	if config.DatastoreIp == "" {
-		return stacktrace.NewError("No datastore IP provided")
-	}
-	if config.DatastorePort == 0 {
-		return stacktrace.NewError("No datastore port provided")
-	}
-	return nil
-}
-
 func main() {
 	// NOTE: we'll want to change the ForceColors to false if we ever want structured logging
 	logrus.SetFormatter(&logrus.TextFormatter{
@@ -120,6 +110,19 @@ func runMain () error {
 	logrus.Info("Running server...")
 	if err := exampleAPIServer.Run(); err != nil {
 		return stacktrace.Propagate(err, "An error occurred running the server.")
+	}
+	return nil
+}
+
+// ====================================================================================================
+// 									   Private helper methods
+// ====================================================================================================
+func (config serverConfig) validate() error {
+	if config.DatastoreIp == "" {
+		return stacktrace.NewError("No datastore IP provided")
+	}
+	if config.DatastorePort == 0 {
+		return stacktrace.NewError("No datastore port provided")
 	}
 	return nil
 }
