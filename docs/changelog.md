@@ -1,4 +1,6 @@
 # TBD
+
+# 0.1.1
 ### Features
 * Added `example_api_server_version.go` and `example_api_server_version_ts` which contains the server version value
 * Added `update-own-version-constants.sh` script to automatically update the version value in both files
