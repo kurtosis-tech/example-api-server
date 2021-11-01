@@ -45,8 +45,8 @@ export namespace GetPersonArgs {
 }
 
 export class GetPersonResponse extends jspb.Message {
-  getBooksRead(): string;
-  setBooksRead(value: string): void;
+  getBooksRead(): number;
+  setBooksRead(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPersonResponse.AsObject;
@@ -60,7 +60,7 @@ export class GetPersonResponse extends jspb.Message {
 
 export namespace GetPersonResponse {
   export type AsObject = {
-    booksRead: string,
+    booksRead: number,
   }
 }
 

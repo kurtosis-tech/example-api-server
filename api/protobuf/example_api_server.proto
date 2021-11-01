@@ -35,7 +35,7 @@ message GetPersonArgs {
 
 message GetPersonResponse {
   //The amount of book read by the person
-  string books_read = 1;
+  uint32 books_read = 1;
 }
 
 // ==============================================================================================
