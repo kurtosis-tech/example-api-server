@@ -75,8 +75,16 @@ func (exampleAPIServerService ExampleAPIServerService) GetPerson(ctx context.Con
 		return nil, stacktrace.Propagate(err, "An error occurred getting data for person with ID '%v'", personId)
 	}
 
+	personBooksReadBase := 10
+	personBooksReadBitSize := 32
+
+	personBooksRead, err := strconv.ParseUint(getResponse.GetValue(), personBooksReadBase, personBooksReadBitSize)
+	if err != nil {
+		return nil, stacktrace.Propagate(err, "An error occurred parsing get response string value '%v' to uint", getResponse.GetValue())
+	}
+
 	getPersonResponse := &example_api_server_rpc_api_bindings.GetPersonResponse{
-		BooksRead: getResponse.GetValue(),
+		BooksRead: uint32(personBooksRead),
 	}
 
 	return getPersonResponse, nil
