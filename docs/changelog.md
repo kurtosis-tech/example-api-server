@@ -1,4 +1,6 @@
 # TBD
+
+# 0.2.0
 ### Breaking Changes
 * The `GetPersonResponse.books_read` field is now a `uint32`, rather than an `string`
     * Users should modify the value type where they are setting this value
