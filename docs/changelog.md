@@ -1,4 +1,10 @@
 # TBD
+### Breaking Changes
+* The `GetPersonResponse.books_read` field is now a `uint32`, rather than an `string`
+    * Users should modify the value type where they are setting this value
+
+### Features 
+* Added `example_api_server_rpc_api_consts` which contains constants related to the example API server (e.g. ListenProtocol)
 
 # 0.1.1
 ### Features
