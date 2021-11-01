@@ -36,6 +36,8 @@ github.com/google/uuid v1.1.2/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/kurtosis-tech/example-api-server/api/golang v0.0.0-20211027163521-7340da22d23e h1:3Z2ht9M+eg78NRH0c1V5fWmxL9GUTE7ZB8GCdLDwUxs=
 github.com/kurtosis-tech/example-api-server/api/golang v0.0.0-20211027163521-7340da22d23e/go.mod h1:HI+M5KdzhZ165JPV7vQvldNNE8m86ZIeg86PzwS6cqs=
+github.com/kurtosis-tech/example-api-server/api/golang v0.0.0-20211101150102-edd2e13c322a h1:JYwQhiGdKmPqhWU54wqIL6wGebUPhS9v9IzAp8ELYKs=
+github.com/kurtosis-tech/example-api-server/api/golang v0.0.0-20211101150102-edd2e13c322a/go.mod h1:HI+M5KdzhZ165JPV7vQvldNNE8m86ZIeg86PzwS6cqs=
 github.com/kurtosis-tech/example-datastore-server/api/golang v0.0.0-20211027202930-da3ee244008e h1:c4ITyTpBIQGl5FFkYbyCPCtcFQKQyEIyyC3QGKxsixs=
 github.com/kurtosis-tech/example-datastore-server/api/golang v0.0.0-20211027202930-da3ee244008e/go.mod h1:LB2yqaqWgd0oSew+GsdpcI1jRTq3W7toM7tX8rcS7c4=
 github.com/kurtosis-tech/minimal-grpc-server/golang v0.0.0-20210921153930-d70d7667c51b h1:aARmILachF0sbwuYmtvY5Xm3DdhqwSI+wxHIDVu7oeo=
