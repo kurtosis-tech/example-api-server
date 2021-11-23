@@ -1,5 +1,9 @@
 # TBD
 
+# 0.2.2
+### Features
+* Activated `publish_api_typescript` Circle Ci job to publish the Typescript version of the API
+
 # 0.2.1
 ### Features
 * Upgraded `Example API server client` in the server project to the latest version [Example API server 0.2.0](https://github.com/kurtosis-tech/example-api-server/blob/master/docs/changelog.md#020)

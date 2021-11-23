@@ -9,6 +9,12 @@ parameters:
   docker-engine-version:
     type: string
     default: 20.10.7
+  go-version:
+    type: string
+    default: 1.15.13
+  node-version:
+    type: string
+    default: 16.13.0
 
 # NOTE: Because CircleCI jobs run on separate machines from each other, we duplicate steps (like checkout) between jobs. This is because doing the "correct" DRY
 #  refactoring of, "one job for checkout, one job for build Docker image, etc." would require a) persisting files between jobs and b) persisting Docker images between
@@ -18,7 +24,7 @@ parameters:
 jobs:
   check_api_golang:
     docker:
-      - image: cimg/go:1.15.13
+      - image: "cimg/go:<< pipeline.parameters.go-version>>"
     steps:
       - checkout
 
@@ -38,7 +44,7 @@ jobs:
 
   check_api_typescript:
     docker:
-      - image: cimg/node:14.17.1
+      - image: "cimg/node:<< pipeline.parameters.node-version>>"
     steps:
       - checkout
 
@@ -51,19 +57,19 @@ jobs:
 
       - run: api/typescript/scripts/build.sh
 
-  publish_typescript:
+  publish_api_typescript:
     docker:
-      - image: cimg/node:14.17.1
+      - image: "cimg/node:<< pipeline.parameters.node-version>>"
     steps:
       - checkout
       - run: api/typescript/scripts/build.sh
       - npm-publisher/publish-from-package-version:
-          package-path: typescript
+          package-path: api/typescript
           publish-token-variable: NPMJS_AUTH_TOKEN
 
   check_server_code:
     docker:
-      - image: cimg/go:1.15.13
+      - image: "cimg/go:<< pipeline.parameters.go-version>>"
     steps:
       - checkout
 
@@ -88,7 +94,7 @@ jobs:
 
   push_server_artifacts:
     docker:
-      - image: cimg/go:1.15.13
+      - image: "cimg/go:<< pipeline.parameters.go-version>>"
     steps:
       - checkout
 
@@ -163,13 +169,12 @@ workflows:
               ignore: /.*/
             tags:
               only: /^[0-9]+\.[0-9]+\.[0-9]+$/
-      # TODO UNCOMMENT WHEN READY
-      #- publish_typescript:
-      #    context:
-      #      - npmjs-user
-      #    filters:
-      #      branches:
-      #        ignore: /.*/
-      #      tags:
-      #        only: /^[0-9]+\.[0-9]+\.[0-9]+$/
+      - publish_api_typescript:
+          context:
+            - npmjs-user
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^[0-9]+\.[0-9]+\.[0-9]+$/
       # -- End artifact-publishing jobs ----------------------------
