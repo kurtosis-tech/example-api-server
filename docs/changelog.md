@@ -1,6 +1,13 @@
 # TBD
 ### Changes
-* Use `@grpc/grpc-js` in the Typescript API, rather than `grpc`
+* Regenerate the API libs with `@grpc/grpc-js` rather than `grpc`
+
+### Fixes
+* `@types/google-protobuf` is now correctly declared as a runtime dependency
+
+### Breaking Changes
+* The Typescript API now uses `@grpc/grpc-js` rather than `grpc`
+    * Users should switch their own TS code calling the datastore server API to `@grpc/grpc-js`
 
 # 0.2.2
 ### Features
