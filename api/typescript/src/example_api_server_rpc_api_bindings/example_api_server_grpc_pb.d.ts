@@ -5,7 +5,7 @@
 
 import * as example_api_server_pb from "./example_api_server_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
-import * as grpc from "grpc";
+import * as grpc from "@grpc/grpc-js";
 
 interface IExampleAPIServerServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   isAvailable: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, google_protobuf_empty_pb.Empty>;
