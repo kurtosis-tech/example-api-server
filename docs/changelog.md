@@ -1,4 +1,6 @@
 # TBD
+### Changes
+* Use `@grpc/grpc-js` in the Typescript API, rather than `grpc`
 
 # 0.2.2
 ### Features
