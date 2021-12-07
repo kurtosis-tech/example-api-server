@@ -1,5 +1,9 @@
 # TBD
 
+# 0.3.2
+### Fixes
+* Actually enable debug logging
+
 # 0.3.1
 ### Changes
 * Enable debug logging
