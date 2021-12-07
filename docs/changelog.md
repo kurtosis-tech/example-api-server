@@ -1,4 +1,6 @@
 # TBD
+
+# 0.3.0
 ### Changes
 * Regenerate the API libs with `@grpc/grpc-js` rather than `grpc`
 
