@@ -31,7 +31,7 @@ const (
 	listenProtocol = "tcp"
 )
 
-var defaultKurtosisLogLevel = logrus.InfoLevel.String()
+var defaultKurtosisLogLevel = logrus.InfoLevel
 
 // Fields are public for JSON unmarshalling
 type serverConfig struct {
@@ -57,11 +57,7 @@ func main() {
 }
 
 func runMain () error {
-	logLevel, err := logrus.ParseLevel(defaultKurtosisLogLevel)
-	if err != nil {
-		return stacktrace.Propagate(err, "An error occurred parsing the log level string '%v':", defaultKurtosisLogLevel)
-	}
-	logrus.SetLevel(logLevel)
+	logrus.SetLevel(defaultKurtosisLogLevel)
 
 	configFilepathArg := flag.String("config", "", "Filepath to the config file")
 	flag.Parse()
