@@ -45,6 +45,7 @@ func main() {
 		ForceColors:   true,
 		FullTimestamp: true,
 	})
+	logrus.SetLevel(logrus.DebugLevel)
 
 	err := runMain()
 	if err != nil {
