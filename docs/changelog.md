@@ -1,5 +1,10 @@
 # TBD
 
+# 0.3.4
+
+### Fixes
+* Refactored 'ExampleAPIServerServiceClient' from 'export type' to only 'export', as we need the class itself and not it`s type.
+
 # 0.3.3
 
 ### Features
