@@ -34,7 +34,7 @@
 
 # 0.2.1
 ### Features
-* Upgraded `Example API server client` in the server project to the latest version [Example API server 0.2.0](https://github.com/kurtosis-tech/example-api-server/blob/master/docs/changelog.md#020)
+* Upgraded `Example API server client` in the server project to the latest version [Example API server 0.2.0](https://github.com/kurtosis-tech/example-api-server/blob/master/CHANGELOG.md#020)
 
 # 0.2.0
 ### Breaking Changes
