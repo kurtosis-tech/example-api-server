@@ -37,4 +37,5 @@ to_update_abs_filepath="${root_dirpath}/${PACKAGE_JSON_FILEPATH}"
 if ! $(kudet update-version-in-file "${to_update_abs_filepath}" "${REPLACE_PATTERN}" "${new_version}"); then
     echo "Error: An error occurred setting new version '${new_version}' in constants file '${constant_file_abs_filepath}' using pattern '${replace_pattern}'" >&2
     exit 1
+    
 fi
