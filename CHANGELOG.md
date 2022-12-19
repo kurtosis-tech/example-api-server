@@ -57,7 +57,7 @@
 * Added `get-docker-image-tag.sh` script to automatically set Docker image tag
 * Added `build.sh` script which builds the `example-api-server` binary field and builds the Docker image
 * Updated Circle CI configuration adding two jobs: `check_server_code` and `push_server_artifacts` to check server code and publish the image in Docker Hub
-* Upgraded `Example Datastore Server` dependency to the latest version [Example Datastore Server 0.3.0](https://github.com/kurtosis-tech/example-datastore-server/blob/master/docs/changelog.md#030)
+* Upgraded `Example Datastore Server` dependency to the latest version [Example Datastore Server 0.3.0](https://github.com/kurtosis-tech/example-datastore-server/blob/master/CHANGELOG.md#030)
 
 # 0.1.0
 ### Features
