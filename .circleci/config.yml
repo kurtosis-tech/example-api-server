@@ -127,7 +127,6 @@ workflows:
       - kurtosis-docs-checker/check-docs:
           markdown-link-check-config-json: |
             {
-                ],
                 "ignorePatterns": [
                     {
                         "pattern": "https://github.com/kurtosis-tech/example-api-server"
