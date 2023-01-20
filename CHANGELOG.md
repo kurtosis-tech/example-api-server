@@ -1,23 +1,32 @@
-# 0.3.4
+# Changelog
+
+## [0.3.6-dev](https://github.com/kurtosis-tech/example-api-server/compare/0.3.5-dev...0.3.6-dev) (2023-01-20)
+
+
+### Bug Fixes
+
+* Bump json5 from 1.0.1 to 1.0.2 in /api/typescript ([#20](https://github.com/kurtosis-tech/example-api-server/issues/20)) ([bd5e6d3](https://github.com/kurtosis-tech/example-api-server/commit/bd5e6d3db98ffbda6422baf20ed1237ef07c81a0))
+
+## 0.3.4
 
 ### Fixes
 * Refactored 'ExampleAPIServerServiceClient' from 'export type' to only 'export', as we need the class itself and not it`s type.
 
-# 0.3.3
+## 0.3.3
 
 ### Features
 * Added gRPC web proto bindings and made small refactors
 
 
-# 0.3.2
+## 0.3.2
 ### Fixes
 * Actually enable debug logging
 
-# 0.3.1
+## 0.3.1
 ### Changes
 * Enable debug logging
 
-# 0.3.0
+## 0.3.0
 ### Changes
 * Regenerate the API libs with `@grpc/grpc-js` rather than `grpc`
 
@@ -28,15 +37,15 @@
 * The Typescript API now uses `@grpc/grpc-js` rather than `grpc`
     * Users should switch their own TS code calling the datastore server API to `@grpc/grpc-js`
 
-# 0.2.2
+## 0.2.2
 ### Features
 * Activated `publish_api_typescript` Circle Ci job to publish the Typescript version of the API
 
-# 0.2.1
+## 0.2.1
 ### Features
 * Upgraded `Example API server client` in the server project to the latest version [Example API server 0.2.0](https://github.com/kurtosis-tech/example-api-server/blob/master/docs/changelog.md#020)
 
-# 0.2.0
+## 0.2.0
 ### Breaking Changes
 * The `GetPersonResponse.books_read` field is now a `uint32`, rather than an `string`
     * Users should modify the value type where they are setting this value
@@ -44,7 +53,7 @@
 ### Features 
 * Added `example_api_server_rpc_api_consts` which contains constants related to the example API server (e.g. ListenProtocol)
 
-# 0.1.1
+## 0.1.1
 ### Features
 * Added `example_api_server_version.go` and `example_api_server_version_ts` which contains the server version value
 * Added `update-own-version-constants.sh` script to automatically update the version value in both files
@@ -59,7 +68,7 @@
 * Updated Circle CI configuration adding two jobs: `check_server_code` and `push_server_artifacts` to check server code and publish the image in Docker Hub
 * Upgraded `Example Datastore Server` dependency to the latest version [Example Datastore Server 0.3.0](https://github.com/kurtosis-tech/example-datastore-server/blob/master/CHANGELOG.md#030)
 
-# 0.1.0
+## 0.1.0
 ### Features
 * Created example API server protobuf service definition in `example_api_server.proto` file
 * Added `regenerate-protobuf-output.sh` shell script to regenerate rpc Golang and Typescript binding files
