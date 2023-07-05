@@ -8,6 +8,6 @@ require (
 	github.com/kurtosis-tech/minimal-grpc-server/golang v0.0.0-20210921153930-d70d7667c51b
 	github.com/palantir/stacktrace v0.0.0-20161112013806-78658fd2d177
 	github.com/sirupsen/logrus v1.8.1
-	google.golang.org/grpc v1.38.0
-	google.golang.org/protobuf v1.26.0
+	google.golang.org/grpc v1.53.0
+	google.golang.org/protobuf v1.28.1
 )
